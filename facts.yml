@@ -1,0 +1,17 @@
+- name: gather facts from osp instances
+  hosts: jumpbox
+  gather_facts: false
+  tasks:
+  - name: gather osp facts
+    os_server_facts:
+      cloud: ospcloud
+      region_name: RegionOne
+    register: hasilnya
+  #
+  # - name: test output from osp facts
+  #   debug: var=hasilnya.ansible_facts.openstack_servers
+
+  - name: debug2
+    debug:
+      msg: "{{item.name}}"
+    with_items: "{{hasilnya.ansible_facts.openstack_servers}}"
