@@ -6,12 +6,12 @@
     os_server_facts:
       cloud: ospcloud
       region_name: RegionOne
-    register: hasilnya
+    register: output
   #
   # - name: test output from osp facts
   #   debug: var=hasilnya.ansible_facts.openstack_servers
 
   - name: debug2
     debug:
-      msg: "{{item.name}}"
-    with_items: "{{hasilnya.ansible_facts.openstack_servers}}"
+      msg: " the hostname is {{item.name}} with ip address {{item.public_v4}}"
+    with_items: "{{output.ansible_facts.openstack_servers}}"

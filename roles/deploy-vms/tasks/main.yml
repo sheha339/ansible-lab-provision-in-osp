@@ -33,4 +33,4 @@
       - instance_name: frontend
       - instance_name: app1
       - instance_name: app2
-      - instance_name: appdb
+      - instance_name: db

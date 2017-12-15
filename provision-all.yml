@@ -2,3 +2,8 @@
   gather_facts: false
   roles:
     - deploy-vms
+
+# - hosts: jumpbox
+#   gather_facts: false
+#   roles:
+#     - deploy-3tier-apps
